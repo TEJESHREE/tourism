@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Indian Tourism</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="signup.css" />
+  <link rel="stylesheet" href="http://www.html5andcss3.org/form.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <!--
+ <script>
+    function submitFunction()
+	{
+	  
+	var uname =document.forms["myform"]["username"].value;
+	var pass=document.forms["myform"]["password"].value;
+	//var uname=document.getElementById("username");
+	//var pass=document.getElementById("password");
+	//alert('Username must have alphabst characters only");
+	if(password_validation(pass,7,12)) 
+	{
+	if (allLetter(uname))
+	{
+	alert('Username must have alphabst characters only");
+	}
+	}
+	//return false;
+   }
+function allLetter(uname)
+{
+	var letters=/[Abc]/;
+	if(uname.value.match(letters))
+	{
+		return true;
+	}
+	else{
+	alert('Username must have alphabst characters only");
+	uname.focus();
+	return false;
+	}
+	
+}
+function password_validation(pass,mx,my)
+{
+		var pass_len=pass.value.length;
+	if(pass_len==0||pass_len>=my||pass_len<mx)
+	{
+	alert("user Id should not be empty");
+	pass.focus();
+	return false;
+	}
+	return true;
+}
+
+		 
+ </script>-->
+ <script type="text/javascript">
+
+  function checkForm(form)
+  {
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert("Login successfull ");
+    return true;
+  }
+
+</script>
+ <body>
+  <div class="item">
+		   <img src="img/water1.jpeg">
+		   <div class="carousel-caption">
+              
+           </div>			  
+   </div>
+   
+  <div class="login-box">
+  <img src="img/avatar.jpg" class="avatar">
+    <h1><b>Register here</b><h1>
+<!--	<form action="" method="post" name="myform">
+  <ul style="list-style:none">
+    <li>
+     <label for="Username"><h4>User Name</h4 ></label>
+     <input type="text" id="username" name="username" placeholder="User Name" required />
+    </li>
+    <li>
+     <label for="password"><h4>Password </h4></label>
+     <input id="password" name="password" type="password" title="Minimum 8 characters, one number, one uppercase and one lowercase letter" pattern="(?=^.{8,}$)((?=.*d)|(?=.*W+))(?![.n])(?=.*[A-Z])(?=.*[a-z]).*" required />
+     <p class="validation01">
+      <span class="invalid"><h6>Minimum 8 characters, one number, one uppercase letter and one lowercase letter</h6></span>
+      <span class="valid"><h6>Your password meets our requirements, thank you.</h6></span>
+     </p>
+     </li>
+   </ul>
+   
+  <input type="submit" value="Sign up" style="background:#00C492; color:#fff;" onsubmit="submitFunction()"/>
+ </form>-->
+ <form method="post" ... onsubmit="return checkForm(this);">
+<p><b>Username:</b><br><input type="text" name="username"></p><br />
+<p><b>Password:</b><br><input type="password" name="pwd1"></p><br />
+<p id="text"><b>Confirm Password:</b><br><input type="password" name="pwd2"></p>
+<p id="sub"><b><input type="submit" value="SignUp"></b></p>
+</form>
+ 
+  </body>
+  </head>
+  </html>
+  
+  
+  <!---body{
+	margin:0;
+	padding:0;
+	background-size:cover;
+	background-position:center;
+	font-family:sans-serif;
+	rgba(0,0,0,0.5);
+}--->
+

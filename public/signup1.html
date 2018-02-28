@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>tourism</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://www.html5andcss3.org/form.css" type="text/css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="signup1.css">
+   </head>
+   <script type="text/javascript">
+
+  function checkForm(form)
+  {
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /[a-z]|[A-Z]|[0-9]/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters and numbers!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.pwd1.value != "" && form.pwd1.value == form.pwd2.value) {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.pwd1.focus();
+      return false;
+    }
+
+    alert("Login successfull ");
+    return true;
+  }
+
+</script>
+   <body>
+   <div class="item">
+		   <img src="img/water1.jpeg">
+	</div>
+     <div class="box">
+	     <h2>REGISTER HERE</h2>
+		 <form method="post" ... onsubmit="return checkForm(this);">
+		 
+			<div class="inputBox">
+			  <input type="text" name="username" required="">
+			  <label>Username:</label>
+			  
+			</div>
+			
+			<div class="inputBox">
+			  <input type="password" name="pwd1" required="">
+			  <label>Password:</label>
+			  
+			</div>
+			
+
+			<div class="inputBox">
+			  <input type="password" name="pwd2" required="">
+			  <label>Confirm Password:</label>
+			  
+			</div>
+			<input type="submit" name="" value="Sign Up">
+		 </form>
+		</div>
+	</body>
+  </html>
+		 
